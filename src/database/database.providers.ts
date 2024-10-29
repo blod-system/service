@@ -11,7 +11,7 @@ export const databaseProviders = [
         port: Number(configService.get<string>('DATABASE_PORT')),
         username: 'root',
         password: configService.get<string>('DATABASE_PASSWORD'),
-        database: 'nest',
+        database: configService.get<string>('DATABASE_NAME'),
         entities: [__dirname + '/../**/*.entity{.ts,.js}'],
         synchronize: true,
       });
